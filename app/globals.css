@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0b;
+  --foreground: #f4f2ed;
 }
 
 @theme inline {
@@ -12,15 +12,27 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Faixa de luz de inspeção — apenas CSS, sem WebGL */
+.inspection-light {
+  background:
+    radial-gradient(
+      ellipse 90% 55% at 50% 0%,
+      rgba(244, 242, 237, 0.16),
+      transparent 65%
+    ),
+    linear-gradient(180deg, #17181a 0%, #0a0a0b 70%);
+}
+
+.hairline {
+  border-color: rgba(244, 242, 237, 0.12);
 }
